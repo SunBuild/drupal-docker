@@ -1,6 +1,6 @@
 FROM appsvcorg/nginx-fpm:0.1
 
-COPY drupal.tar.gz /tmp
+COPY drupal-8.4.2.tar.gz /tmp
 COPY entrypoint.sh /tmp
 COPY copy.sh /tmp
 
