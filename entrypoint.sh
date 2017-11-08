@@ -19,9 +19,6 @@ fi
 
 drush --version
 
-drush @none dl registry_rebuild-7.x
-
-
 ssh-keygen -A
 /usr/sbin/sshd
 
