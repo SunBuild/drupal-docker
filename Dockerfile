@@ -14,8 +14,8 @@ ENV COMPOSER_SETUP_SHA 544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfd
 COPY entrypoint.sh /tmp
 
 # Install Composer.
-RUN curl -sS https://getcomposer.org/installer | php
-RUN mv composer.phar /usr/local/bin 
+RUN cd /usr/local/bin && \
+    curl -sS https://getcomposer.org/installer | php
 
 # Install Drush 8.
 RUN composer global require drush/drush:8.*
