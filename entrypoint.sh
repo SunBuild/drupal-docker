@@ -1,12 +1,28 @@
 #!/usr/bin/env bash
+log(){
+	while read line ; do
+		echo "`date '+%D %T'` $line"
+	done
+}
 
 set -e
+logfile=/home/LogFiles/entrypoint.log
+test ! -f $logfile && mkdir -p /home/LogFiles && touch $logfile
+exec > >(log | tee -ai $logfile)
+exec 2>&1
 
-  if ! [ -e /home/site/wwwroot/index.php -a -e /home/site/wwwroot/sites/default/settings.php ]; then
-    echo "Drupal not found, copying to site root"
-    echo "Copying Drupal files, please refresh in a moment" 
-    
-  else
-    echo "Existing Drupal installation found"
-  fi
+set -x
 
+if [ ! -d "/home/site/wwwroot/docroot" ]; then
+  mkdir -p /home/site/wwwroot/docroot
+fi
+
+drush --version
+
+drush @none dl registry_rebuild-7.x
+
+
+ssh-keygen -A
+/usr/sbin/sshd
+
+/start.sh
