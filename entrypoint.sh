@@ -11,7 +11,7 @@ else
     echo "Copying Drupal files, please refresh in a moment" > /home/site/wwwroot/index.php
     tar -xzf /tmp/drupal.tar.gz -C /home/site/wwwroot
     rm /tmp/drupal.tar.gz 
-    cp -rf C /home/site/wwwroot/drupal-8.4.2/* /home/site/wwwroot
+    cp -rf /home/site/wwwroot/drupal-8.4.2/* /home/site/wwwroot
 
   else
     echo "Existing Drupal installation found"
