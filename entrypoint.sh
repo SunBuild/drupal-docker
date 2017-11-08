@@ -17,5 +17,6 @@ drush --version
 
 rm -r /home/site/wwwroot
 cd /home/site
-drush qd wwwroot --profile=minimal --yes
+drush qd --profile=minimal --yes
+mv drupal wwwroot
 
