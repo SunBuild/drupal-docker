@@ -10,4 +10,3 @@ else
   echo "Existing Drupal installation found"
 fi
 
-exec /usr/local/bin/entrypoint.sh
