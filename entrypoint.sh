@@ -19,6 +19,10 @@ fi
 
 drush --version
 
+rm -r /home/site/wwwroot
+cd /home/site
+drush qd wwwroot --profile=minimal 
+
 ssh-keygen -A
 /usr/sbin/sshd
 
