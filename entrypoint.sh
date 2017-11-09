@@ -17,6 +17,7 @@ set -x
 cd /home/site/wwwroot
 curl -O http://files.drush.org/drush.phar 
 php drush.phar --version
-php drush.phar dl drupal 
-mv * .* ..
+php drush.phar dl drupal-8.4.2 --drupal-project-rename app
+
+
 
