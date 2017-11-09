@@ -13,13 +13,11 @@ exec 2>&1
 
 set -x
 
+#Check if drush is installed 
 drush --version
 
-#rm -r /home/site/wwwroot
-#cd /home/site
-#drush qd --profile=minimal --yes > /home/logfiles/drush.log
-#mv drupal wwwroot
-
-wget https://www.drupal.org/files/projects/drupal-8.4.2.tar.gz
-tar -zxvf drupal-8.4.2.tar.gz -C /home/site/wwwroot 
+#Download drupal
+cd /home/site/wwwroot
+drush dl drupal 
+mv * .* ..
 
