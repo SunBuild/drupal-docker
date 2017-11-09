@@ -15,7 +15,7 @@ set -x
 
 #Download drupal
 cd /home/site/wwwroot
-php drush.phar --version
-php drush.phar dl drupal 
+php drush --version
+php drush dl drupal 
 mv * .* ..
 
