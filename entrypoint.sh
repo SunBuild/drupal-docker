@@ -13,11 +13,9 @@ exec 2>&1
 
 set -x
 
-#Check if drush is installed 
-drush --version
-
 #Download drupal
 cd /home/site/wwwroot
-drush dl drupal 
+php drush.phar --version
+php drush.phar dl drupal 
 mv * .* ..
 
