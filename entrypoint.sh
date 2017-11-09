@@ -15,8 +15,11 @@ set -x
 
 drush --version
 
-rm -r /home/site/wwwroot
-cd /home/site
-drush qd --profile=minimal --yes
-mv drupal wwwroot
+#rm -r /home/site/wwwroot
+#cd /home/site
+#drush qd --profile=minimal --yes > /home/logfiles/drush.log
+#mv drupal wwwroot
+
+wget https://www.drupal.org/files/projects/drupal-8.4.2.tar.gz
+tar -zxvf drupal-8.4.2.tar.gz -C /home/site/wwwroot 
 
