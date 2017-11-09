@@ -14,10 +14,10 @@ exec 2>&1
 set -x
 
 #Download drupal
-cd /home/site/wwwroot
+cd /home/site/
 curl -O http://files.drush.org/drush.phar 
 php drush.phar --version
-php drush.phar dl drupal-8.4.2 --drupal-project-rename app
+php drush.phar dl --drupal-project-rename=wwwroot drupal-8.4.2 --yes
 
 
 
